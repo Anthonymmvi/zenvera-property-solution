@@ -22,7 +22,7 @@ export default function App() {
       </header>
 
       {/* Hero */}
-      <section className="relative h-[90vh] flex items-center justify-center text-center">
+     <section className="relative min-h-[90vh] flex items-center justify-center text-center">
         <img
           src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=2000&q=80"
           alt="Luxury interior"
@@ -62,11 +62,64 @@ export default function App() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="bg-gray-100 px-10 py-20 text-center">
-        <h3 className="text-3xl font-light mb-4">Get In Touch</h3>
-        <p>Email: customercare@zenverallc.com</p>
-        <p>Phone: (510) 362-4169</p>
-      </section>
+     <section id="contact" className="bg-gray-100 px-6 md:px-10 py-24">
+  <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+    {/* Left column */}
+    <div>
+      <h3 className="text-3xl font-light mb-4">Get In Touch</h3>
+      <p className="text-gray-600 mb-6">
+        Have questions or ready to work with us? Send us a message and we’ll get back to you shortly.
+      </p>
+      <p className="text-sm mb-2"><strong>Email:</strong> customercare@zenverallc.com</p>
+      <p className="text-sm"><strong>Phone:</strong> (510) 362-4169</p>
+    </div>
+
+    {/* Right column – FORM */}
+    <form
+      name="contact"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      className="bg-white p-8 rounded-lg shadow-sm space-y-4"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="w-full border border-gray-300 px-4 py-3 rounded"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        className="w-full border border-gray-300 px-4 py-3 rounded"
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        rows="5"
+        required
+        className="w-full border border-gray-300 px-4 py-3 rounded"
+      />
+
+      <button
+        type="submit"
+        className="w-full bg-gray-900 text-white py-3 uppercase tracking-widest"
+      >
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
 
       <footer className="bg-gray-900 text-gray-300 py-6 text-center text-sm">
         © {new Date().getFullYear()} Zenvera Property Solution
